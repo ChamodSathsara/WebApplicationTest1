@@ -10,10 +10,32 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public IActionResult tasks()
         {
-//update
             var tasks = new string[] { "Task 1", "Task 2 ", "Tasks 3 ", "Task 4" };
             return Ok(tasks);
         }
+
+        [HttpPost]
+        public IActionResult createTask()
+        { 
+            return Ok();
+        }
+
+        [HttpPatch]
+        public IActionResult updateTask()
+        {
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IActionResult deleteTask()
+        {
+            var isComplete = true;
+            if (isComplete) {
+            return BadRequest();
+            }else
+                return Ok();
+        }
+
 
     }
 }
