@@ -8,10 +8,10 @@ namespace WebApplication1.Controllers
     [ApiController]
     public class TodosController : ControllerBase
     {
-        private TodosServices _todoServices { get; set; }
+        private ITodoRepository _todoServices;
 
-        public TodosController() {
-            _todoServices = new TodosServices();
+        public TodosController(ITodoRepository _repository) {
+            _todoServices = _repository;
         }
 
 
